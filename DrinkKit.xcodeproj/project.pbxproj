@@ -11,10 +11,10 @@
 		017A00C12196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
 		017A00C22196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
 		017A00C32196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
-		017A00C42196183E00128961 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Profile.swift */; };
-		017A00C52196183E00128961 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Profile.swift */; };
-		017A00C62196183E00128961 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Profile.swift */; };
-		017A00C72196183E00128961 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Profile.swift */; };
+		017A00C42196183E00128961 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Person.swift */; };
+		017A00C52196183E00128961 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Person.swift */; };
+		017A00C62196183E00128961 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Person.swift */; };
+		017A00C72196183E00128961 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BA2196183E00128961 /* Person.swift */; };
 		017A00C82196183E00128961 /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BB2196183E00128961 /* Alcohol.swift */; };
 		017A00C92196183E00128961 /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BB2196183E00128961 /* Alcohol.swift */; };
 		017A00CA2196183E00128961 /* Alcohol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00BB2196183E00128961 /* Alcohol.swift */; };
@@ -69,7 +69,7 @@
 
 /* Begin PBXFileReference section */
 		017A00B92196183E00128961 /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
-		017A00BA2196183E00128961 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		017A00BA2196183E00128961 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		017A00BB2196183E00128961 /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
 		017A00BC2196183E00128961 /* Drink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		017A00BD2196183E00128961 /* MetabolicRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetabolicRate.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				017A00B92196183E00128961 /* Sex.swift */,
-				017A00BA2196183E00128961 /* Profile.swift */,
+				017A00BA2196183E00128961 /* Person.swift */,
 				017A00BB2196183E00128961 /* Alcohol.swift */,
 				017A00BC2196183E00128961 /* Drink.swift */,
 				017A00BD2196183E00128961 /* MetabolicRate.swift */,
@@ -508,7 +508,7 @@
 				017A00D42196183E00128961 /* BAC.swift in Sources */,
 				017A00D02196183E00128961 /* MetabolicRate.swift in Sources */,
 				017A00CC2196183E00128961 /* Drink.swift in Sources */,
-				017A00C42196183E00128961 /* Profile.swift in Sources */,
+				017A00C42196183E00128961 /* Person.swift in Sources */,
 				017A00D82196183E00128961 /* BloodAlcoholContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,7 +530,7 @@
 				017A00D62196183E00128961 /* BAC.swift in Sources */,
 				017A00D22196183E00128961 /* MetabolicRate.swift in Sources */,
 				017A00CE2196183E00128961 /* Drink.swift in Sources */,
-				017A00C62196183E00128961 /* Profile.swift in Sources */,
+				017A00C62196183E00128961 /* Person.swift in Sources */,
 				017A00DA2196183E00128961 /* BloodAlcoholContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +544,7 @@
 				017A00D72196183E00128961 /* BAC.swift in Sources */,
 				017A00D32196183E00128961 /* MetabolicRate.swift in Sources */,
 				017A00CF2196183E00128961 /* Drink.swift in Sources */,
-				017A00C72196183E00128961 /* Profile.swift in Sources */,
+				017A00C72196183E00128961 /* Person.swift in Sources */,
 				017A00DB2196183E00128961 /* BloodAlcoholContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,7 +558,7 @@
 				017A00D52196183E00128961 /* BAC.swift in Sources */,
 				017A00D12196183E00128961 /* MetabolicRate.swift in Sources */,
 				017A00CD2196183E00128961 /* Drink.swift in Sources */,
-				017A00C52196183E00128961 /* Profile.swift in Sources */,
+				017A00C52196183E00128961 /* Person.swift in Sources */,
 				017A00D92196183E00128961 /* BloodAlcoholContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

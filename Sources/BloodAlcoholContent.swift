@@ -8,10 +8,10 @@
 
 import Foundation
 
-public class BloodAlcoholContent {
-  public let person: Profile
+public class BloodAlcohol {
+  public let person: Person
   
-  public init(person: Profile){
+  public init(person: Person){
     self.person = person
   }
 
