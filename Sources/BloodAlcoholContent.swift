@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BloodAlcohol {
+public class BloodAlcoholContent {
   public let person: Person
   
   public init(person: Person){
