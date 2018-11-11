@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Person {
+public struct User {
   public typealias Kilograms = Double
   public typealias Meters = Double
   public typealias Feet = Int
