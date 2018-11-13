@@ -38,6 +38,6 @@ public class BloodAlcoholContent {
     //Note: mGramPercentEtOHinBlood is the BAC with instant consumption, absorption, and distribution
     let BAC = gramPercentEtOHinBlood - (user.MetabolicRate.rawValue * Double(duration)/60);
     
-    return round(BAC * 1000)/1000
+    return (round(BAC * 1000)/1000) > 0 ? (round(BAC * 1000)/1000) : 0.0
   }
 }
