@@ -19,16 +19,24 @@ public struct User {
   public let Weight: Pounds
   public let BAC: BAC?
   public let Drinks: [Drink?]
-  public let MetabolicRate: MetabolicRate = .standard
+  public let MetabolicRate: MetabolicRate
   
   var Mass: Kilograms {
     return Double(Weight) / 2.205
   }
   
-  public init(Sex: Sex = .male, Weight: Pounds = 160, Feet: Feet = 5, Inches: Inches = 11, BAC: BAC = 0.0, Drinks: [Drink?] = []){
+  public init(Sex: Sex = .male,
+              Weight: Pounds = 160,
+              Feet: Feet = 5,
+              Inches: Inches = 11,
+              BAC: BAC = 0.0,
+              MetabolicRate: MetabolicRate = .standard,
+              Drinks: [Drink?] = []){
+    
     self.Sex = Sex
     self.Weight = Weight
     self.BAC = BAC
     self.Drinks = Drinks
+    self.MetabolicRate = MetabolicRate
   }
 }
