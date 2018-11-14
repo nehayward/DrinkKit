@@ -40,4 +40,9 @@ public class BloodAlcoholContent {
     
     return (round(BAC * 1000)/1000) > 0 ? (round(BAC * 1000)/1000) : 0.0
   }
+  
+  public func TimeSober(with BAC: BAC, for metabolicRate: MetabolicRate = .standard) -> Date{
+    let timeSober = round((Double(BAC)/metabolicRate.rawValue) * 100) / 100
+    return Calendar.current.date(byAdding: .minute, value: Int(round(timeSober * 60)), to: Date()) ?? Date()
+  }
 }

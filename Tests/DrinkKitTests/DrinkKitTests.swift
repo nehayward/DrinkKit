@@ -23,8 +23,8 @@ class DrinkKitTests: XCTestCase {
     let thirtyMinsAgo = Calendar.current.date(byAdding: .minute, value: -30, to: Date())!
     let drinks : [Drink] = [Drink(Alcohol: .wine)]
     
-    let Janice = Profile(Sex: .female, Weight: 120, Feet: 5, Inches: 2)
-    let BAC = BloodAlcoholContent(person: Janice)
+    let Janice = User(Sex: .female, Weight: 120, Feet: 5, Inches: 2)
+    let BAC = BloodAlcoholContent(user: Janice)
     
     XCTAssertEqual(BAC.Get(with: drinks, started: thirtyMinsAgo), 0.029, "Female BAC Wrong")
   }
@@ -35,11 +35,22 @@ class DrinkKitTests: XCTestCase {
     
     let Drinks : [Drink] = [Drink(Alcohol: .distilled), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
     
-    let John = Profile(Drinks: Drinks)
-    let BAC = BloodAlcoholContent(person: John)
+    let John = User(Drinks: Drinks)
+    let BAC = BloodAlcoholContent(user: John)
     
     XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAgo), 0.047, "Male BAC Wrong")
   }
+  
+  func testTimeSober() {
+    let twoHoursAgo = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
+    
+    let Drinks : [Drink] = [Drink(Alcohol: .distilled), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
+    let John = User(Drinks: Drinks)
+    let BAC = BloodAlcoholContent(user: John)
+    
+    XCTAssertLessThanOrEqual(BAC.TimeSober(with: 0.0), Date(), "Wrong Time")
+  }
+  
   
   
   func testPerformanceExample() {

@@ -146,12 +146,12 @@
 		017A00B82196183E00128961 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				017A00B92196183E00128961 /* Sex.swift */,
 				017A00BA2196183E00128961 /* User.swift */,
-				017A00BB2196183E00128961 /* Alcohol.swift */,
-				017A00BC2196183E00128961 /* Drink.swift */,
 				017A00BD2196183E00128961 /* MetabolicRate.swift */,
 				017A00BE2196183E00128961 /* BAC.swift */,
+				017A00B92196183E00128961 /* Sex.swift */,
+				017A00BC2196183E00128961 /* Drink.swift */,
+				017A00BB2196183E00128961 /* Alcohol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
