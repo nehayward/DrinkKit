@@ -33,7 +33,7 @@ class DrinkKitTests: XCTestCase {
   func testGetBACMale() {
     let twoHoursAgo = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
     
-    let Drinks : [Drink] = [Drink(Alcohol: .distilled), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
+    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
     
     let John = User(Drinks: Drinks)
     let BAC = BloodAlcoholContent(user: John)
@@ -42,7 +42,7 @@ class DrinkKitTests: XCTestCase {
   }
   
   func testTimeSober() {    
-    let Drinks : [Drink] = [Drink(Alcohol: .distilled), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
+    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
     let John = User(Drinks: Drinks)
     let BAC = BloodAlcoholContent(user: John)
     
