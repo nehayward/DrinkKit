@@ -8,6 +8,12 @@
 
 import Foundation
 
+public enum Kind : String {
+  case beer
+  case wine
+  case distilled
+}
+
 public struct Drink {
   public typealias Ounce = Double
   
@@ -15,6 +21,7 @@ public struct Drink {
   public let ABV: Double
   public let Time : Date
   public let Alcohol: Alcohol
+  public var Style: String?
   
   var Ethanol : Double {
     return Volume * ABV
@@ -37,7 +44,7 @@ extension Drink {
       self.Volume = 5
       self.ABV = 0.12
       self.Alcohol = Alcohol
-    case .distilled:
+    case .spirit:
       self.Volume = 1.5
       self.ABV = 0.40
       self.Alcohol = Alcohol

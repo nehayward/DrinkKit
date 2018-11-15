@@ -38,12 +38,10 @@ class DrinkKitTests: XCTestCase {
     let John = User(Drinks: Drinks)
     let BAC = BloodAlcoholContent(user: John)
     
-    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAgo), 0.047, "Male BAC Wrong")
+    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAgo), 0.044, "Male BAC Wrong")
   }
   
-  func testTimeSober() {
-    let twoHoursAgo = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
-    
+  func testTimeSober() {    
     let Drinks : [Drink] = [Drink(Alcohol: .distilled), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
     let John = User(Drinks: Drinks)
     let BAC = BloodAlcoholContent(user: John)

@@ -11,5 +11,5 @@ import Foundation
 public enum Alcohol : String {
   case beer
   case wine
-  case distilled
+  case spirit
 }
