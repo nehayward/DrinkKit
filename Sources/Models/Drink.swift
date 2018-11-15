@@ -21,29 +21,32 @@ public struct Drink {
   public let ABV: Double
   public let Time : Date
   public let Alcohol: Alcohol
-  public var Style: String?
+  public let Style: String
   
   var Ethanol : Double {
     return Volume * ABV
   }
   
-  public init(Volume: Ounce = 12, ABV: Double = 0.055, Time: Date = Date(), Alcohol: Alcohol = .beer) {
+  public init(Volume: Ounce = 12, ABV: Double = 0.055, Time: Date = Date(), Alcohol: Alcohol = .beer, Style: String = "") {
     self.Volume = Volume
     self.ABV = ABV
     self.Time = Time
     self.Alcohol = Alcohol
+    self.Style = Style
   }
 }
 
 extension Drink {
-  public init(Alcohol: Alcohol, Time : Date = Date()) {
+  public init(Alcohol: Alcohol, Time : Date = Date(), Style: String = "") {
     self.Time = Time
+    self.Style = Style
     
     switch Alcohol {
     case .wine:
       self.Volume = 5
       self.ABV = 0.12
       self.Alcohol = Alcohol
+      
     case .spirit:
       self.Volume = 1.5
       self.ABV = 0.40
