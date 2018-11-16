@@ -49,6 +49,13 @@ class DrinkKitTests: XCTestCase {
     XCTAssertLessThanOrEqual(BAC.TimeSober(with: 0.0), Date(), "Wrong Time")
   }
   
+  func testImperialUser() {
+    let weight = 72.5748
+    let John = User(Sex: .male, kilogram: weight)
+    
+    XCTAssertLessThanOrEqual(John.Weight, User.Pounds(weight * 2.20462), "Wrong Time")
+  }
+  
   
   
   func testPerformanceExample() {

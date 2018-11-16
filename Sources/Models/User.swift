@@ -40,3 +40,17 @@ public struct User {
     self.MetabolicRate = MetabolicRate
   }
 }
+
+extension User {
+  public init(Sex: Sex = .male,
+              kilogram Weight: Kilograms = 160,
+              BAC: BAC = 0.0,
+              MetabolicRate: MetabolicRate = .standard,
+              Drinks: [Drink?] = []){
+    self.Sex = Sex
+    self.Weight = Pounds(Weight * 2.20462)
+    self.BAC = BAC
+    self.Drinks = Drinks
+    self.MetabolicRate = MetabolicRate
+  }
+}
