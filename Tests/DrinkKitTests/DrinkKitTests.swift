@@ -49,6 +49,16 @@ class DrinkKitTests: XCTestCase {
     XCTAssertLessThanOrEqual(BAC.TimeSober(with: 0.0), Date(), "Wrong Time")
   }
   
+  func testFutureTime() {
+    let twoHoursAhead = Calendar.current.date(byAdding: .hour, value: 2, to: Date())!
+
+    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
+    let John = User(Drinks: Drinks)
+    let BAC = BloodAlcoholContent(user: John)
+    
+    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAhead), 0.0, "Wrong BAC")
+  }
+  
   func testImperialUser() {
     let weight = 72.5748
     let John = User(Sex: .male, kilogram: weight)

@@ -16,6 +16,10 @@ public class BloodAlcoholContent {
   }
 
   public func Get(with drinks : [Drink], started time: Date) -> BAC {
+    if time > Date() {
+      return 0.0
+    }
+    
     guard let duration = Calendar.current.dateComponents([.minute], from: time, to: Date()).minute else {
       return 0.0
     }

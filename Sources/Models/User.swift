@@ -43,7 +43,7 @@ public struct User {
 
 extension User {
   public init(Sex: Sex = .male,
-              kilogram Weight: Kilograms = 160,
+              kilogram Weight: Kilograms = 72,
               BAC: BAC = 0.0,
               MetabolicRate: MetabolicRate = .standard,
               Drinks: [Drink?] = []){
