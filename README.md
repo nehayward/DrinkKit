@@ -12,11 +12,11 @@
     </a>
 </p>
 
-Welcome to **Drinkkit**, easily calculate your Blood Alcohol Content level. It can be used to get your current Blood Alcohol Content or calculate when you'll be sober.
+Welcome to **Drinkkit**! DrinkKit is a small framework written in Swift which can easily calculate your Blood Alcohol Content or check how long until you're sober. Cheers!
 
 ## 👨‍💻 Quick Start
 
-Clone the project and open up the [playground workspace](Playground/DrinkKitQuickstart.workspace). Then build iOS target.
+Clone the project and open up the [playground workspace](Playground/DrinkKitQuickstart.xcworkspace). Then build iOS target.
 
 ```swift
 import Foundation
@@ -41,7 +41,7 @@ print(drinks)
 
 🥃 **Calculate your Blood Alcohol Content**
 
-> Ensure you have `import DrinkKit`.
+> `import DrinkKit` is required.
 
 ```swift
 let oneHourAgo = Calendar.current.date(byAdding: .hour, value: -1, to: Date())!
@@ -56,6 +56,7 @@ print(currentBAC.percantage)
 
 
 ⏱ **See When you'll be Sober**
+> `import DrinkKit` is required.
 
 ```swift
 let John = User(Sex: .male)
