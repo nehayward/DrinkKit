@@ -9,7 +9,7 @@
 
 public enum MetabolicRate : Double {
   case light = 0.010
+  case standard = 0.017
   case medium = 0.020
   case heavy = 0.030
-  case standard = 0.017
 }

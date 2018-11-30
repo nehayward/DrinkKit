@@ -13,3 +13,9 @@ public enum Alcohol : String {
   case wine
   case spirit
 }
+
+extension Alcohol : CustomStringConvertible {
+  public var description: String {
+    return self.rawValue.capitalized
+  }
+}

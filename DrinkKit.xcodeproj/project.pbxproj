@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01284F1021B18BE100C72E29 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01284F0F21B18BE100C72E29 /* Level.swift */; };
 		017A00C02196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
 		017A00C12196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
 		017A00C22196183E00128961 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A00B92196183E00128961 /* Sex.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01284F0F21B18BE100C72E29 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		017A00B92196183E00128961 /* Sex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		017A00BA2196183E00128961 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		017A00BB2196183E00128961 /* Alcohol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alcohol.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				017A00BA2196183E00128961 /* User.swift */,
 				017A00BD2196183E00128961 /* MetabolicRate.swift */,
 				017A00BE2196183E00128961 /* BAC.swift */,
+				01284F0F21B18BE100C72E29 /* Level.swift */,
 				017A00B92196183E00128961 /* Sex.swift */,
 				017A00BC2196183E00128961 /* Drink.swift */,
 				017A00BB2196183E00128961 /* Alcohol.swift */,
@@ -399,7 +402,7 @@
 					};
 					52D6D9851BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 					};
 					52D6D9E11BEFFF6E002C0205 = {
 						CreatedOnToolsVersion = 7.1;
@@ -509,6 +512,7 @@
 				017A00D02196183E00128961 /* MetabolicRate.swift in Sources */,
 				017A00CC2196183E00128961 /* Drink.swift in Sources */,
 				017A00C42196183E00128961 /* User.swift in Sources */,
+				01284F1021B18BE100C72E29 /* Level.swift in Sources */,
 				017A00D82196183E00128961 /* BloodAlcoholContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,7 +730,7 @@
 				PRODUCT_NAME = DrinkKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -748,7 +752,7 @@
 				PRODUCT_NAME = DrinkKit;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -762,7 +766,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DrinkKit.DrinkKit-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -776,7 +780,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DrinkKit.DrinkKit-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

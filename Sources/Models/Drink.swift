@@ -27,7 +27,7 @@ public struct Drink {
     return Volume * ABV
   }
   
-  public init(Volume: Ounce = 12, ABV: Double = 0.055, Time: Date = Date(), Alcohol: Alcohol = .beer, Style: String = "") {
+  public init(Volume: Ounce = 12, ABV: Double = 0.050, Time: Date = Date(), Alcohol: Alcohol = .beer, Style: String = "") {
     self.Volume = Volume
     self.ABV = ABV
     self.Time = Time
@@ -46,12 +46,11 @@ extension Drink {
       self.Volume = 5
       self.ABV = 0.12
       self.Alcohol = Alcohol
-      
     case .spirit:
       self.Volume = 1.5
       self.ABV = 0.40
       self.Alcohol = Alcohol
-    default:
+    case .beer:
       self.Volume = 12
       self.ABV = 0.050
       self.Alcohol = Alcohol
@@ -59,3 +58,8 @@ extension Drink {
   }
 }
 
+extension Drink : CustomStringConvertible {
+  public var description: String {
+    return "\(Alcohol)" + (Style == "" ? "" : " (\(Style))") + " \(Volume)oz \(ABV * 100)% ABV at \(Time)"
+  }
+}

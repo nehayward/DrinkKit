@@ -37,16 +37,18 @@ public class BloodAlcoholContent {
     let totalEthanolInWater = gramsPerOzEtOH * totalEthanol / bodyWaterML;
     //E) Find alcohol per mL of blood
     let alcoholInBlood = totalEthanolInWater * 0.806; //Blood is 80.6% water
+    
     //F) Convert mConcEtOHinBlood from g/mL to g/100 mL (gram percent)
     let gramPercentEtOHinBlood = alcoholInBlood * 100;
+    
     //Note: mGramPercentEtOHinBlood is the BAC with instant consumption, absorption, and distribution
     let BAC = gramPercentEtOHinBlood - (user.MetabolicRate.rawValue * Double(duration)/60);
     
     return (round(BAC * 1000)/1000) > 0 ? (round(BAC * 1000)/1000) : 0.0
   }
   
-  public func TimeSober(with BAC: BAC, for metabolicRate: MetabolicRate = .standard) -> Date{
-    let timeSober = round((Double(BAC)/metabolicRate.rawValue) * 100) / 100
+  public func Time(when level: Level = .Sober, current BAC: BAC, for metabolicRate: MetabolicRate = .standard) -> Date {
+    let timeSober = (Double(BAC - level.rawValue)/metabolicRate.rawValue * 10000) / 10000
     return Calendar.current.date(byAdding: .minute, value: Int(round(timeSober * 60)), to: Date()) ?? Date()
   }
 }
