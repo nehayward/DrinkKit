@@ -12,11 +12,11 @@
     </a>
 </p>
 
-Welcome to **Drinkkit**! DrinkKit is a small framework written in Swift which can easily calculate your Blood Alcohol Content or check how long until you're sober. Cheers!
+Welcome to **DrinkKit**! DrinkKit is a small framework written in Swift which can easily calculate your Blood Alcohol Content or check how long until you're sober. Cheers!
 
 ## 👨‍💻 Quick Start
 
-Clone the project and open up the [playground workspace](Playground/DrinkKitQuickstart.xcworkspace). Then build iOS target.
+Download the [latest release](https://github.com/nehayward/DrinkKit/releases/latest) and open up the playground workspace. Then build iOS target.
 
 ```swift
 import Foundation
@@ -71,6 +71,6 @@ print(date)
 
 You can download the latest frameworks from the [release section](https://github.com/nehayward/drinkkit/releases) or use [Carthage](https://github.com/Carthage/Carthage#installing-carthage). Please follow their instructions for downloading.
 
-## Please enjoy **Drinkkit**, prost
+## Please enjoy **DrinkKit**, prost
 
 This is my first open source project, I hope you enjoy it and I would appreciate any feedback. Let me know what you think on on [Twitter](https://twitter.com/nehayward) 😊
