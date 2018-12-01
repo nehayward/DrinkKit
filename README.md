@@ -23,15 +23,15 @@ import Foundation
 import DrinkKit
 
 // Create User
-let John = User(Sex: .male)
+let john = User(sex: .male)
 
-let BAC = BloodAlcoholContent(user: John)
+let BAC = BloodAlcoholContent(user: john)
 
 // Set Started Drinking Time
 let thirtyMinsAgo = Calendar.current.date(byAdding: .minute, value: -30, to: Date())!
-let drinks : [Drink] = [Drink(Alcohol: .wine)]
+let drinks : [Drink] = [Drink(alcohol: .wine)]
 
-let currentBAC = BAC.Get(with: drinks, started: thirtyMinsAgo)
+let currentBAC = BAC.get(with: drinks, started: thirtyMinsAgo)
 
 print(currentBAC.percantage)
 print(drinks)
@@ -47,11 +47,11 @@ print(drinks)
 let oneHourAgo = Calendar.current.date(byAdding: .hour, value: -1, to: Date())!
 let drinks : [Drink] = [Drink(Alcohol: .beer)]
 
-let Janice = User(Sex: .female, Weight: 120, Feet: 5, Inches: 2)
-let BAC = BloodAlcoholContent(user: Janice)
+let janice = User(sex: .female, weight: 120, feet: 5, inches: 2)
+let BAC = BloodAlcoholContent(user: janice)
 
 let currentBAC = BAC.Get(with: drinks, started: thirtyMinsAgo)
-print(currentBAC.percantage)
+print(currentBAC)
 ```
 
 
@@ -59,18 +59,17 @@ print(currentBAC.percantage)
 > `import DrinkKit` is required.
 
 ```swift
-let John = User(Sex: .male)
-let BAC = BloodAlcoholContent(user: John)
+let john = User(sex: .male)
+let BAC = BloodAlcoholContent(user: john)
 
-let date = BAC.Time(when: .Sober, current: 0.08)
-
-print(date)
+let soberAt = BAC.time(when: .sober, current: 0.08)
+print(soberAt)
 ```
 
 ## Installation
 
 You can download the latest frameworks from the [release section](https://github.com/nehayward/drinkkit/releases) or use [Carthage](https://github.com/Carthage/Carthage#installing-carthage). Please follow their instructions for downloading.
 
-## Please enjoy **DrinkKit**, prost
+## Please enjoy **DrinkKit**, Prost!
 
-This is my first open source project, I hope you enjoy it and I would appreciate any feedback. Let me know what you think on on [Twitter](https://twitter.com/nehayward) 😊
+This is my first open source project, I hope you enjoy it and I would appreciate any feedback. Let me know what you think on [Twitter](https://twitter.com/nehayward) 😊
