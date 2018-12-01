@@ -8,13 +8,13 @@
 
 import Foundation
 
-public enum Alcohol : String {
+public enum Alcohol: String {
   case beer
   case wine
   case spirit
 }
 
-extension Alcohol : CustomStringConvertible {
+extension Alcohol: CustomStringConvertible {
   public var description: String {
     return self.rawValue.capitalized
   }

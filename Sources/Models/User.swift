@@ -15,42 +15,42 @@ public struct User {
   public typealias Inches = Int
   public typealias Pounds = Int
   
-  public let Sex: Sex
-  public let Weight: Pounds
+  public let sex: Sex
+  public let weight: Pounds
   public let BAC: BAC?
-  public let Drinks: [Drink?]
-  public let MetabolicRate: MetabolicRate
+  public let drinks: [Drink]
+  public let metabolicRate: MetabolicRate
   
-  var Mass: Kilograms {
-    return Double(Weight) / 2.205
+  var mass: Kilograms {
+    return Double(weight) / 2.205
   }
   
-  public init(Sex: Sex = .male,
-              Weight: Pounds = 160,
-              Feet: Feet = 5,
-              Inches: Inches = 11,
+  public init(sex: Sex = .male,
+              weight: Pounds = 160,
+              feet: Feet = 5,
+              inches: Inches = 11,
               BAC: BAC = 0.0,
-              MetabolicRate: MetabolicRate = .standard,
-              Drinks: [Drink?] = []){
+              metabolicRate: MetabolicRate = .standard,
+              drinks: [Drink] = []){
     
-    self.Sex = Sex
-    self.Weight = Weight
+    self.sex = sex
+    self.weight = weight
     self.BAC = BAC
-    self.Drinks = Drinks
-    self.MetabolicRate = MetabolicRate
+    self.drinks = drinks
+    self.metabolicRate = metabolicRate
   }
 }
 
 extension User {
-  public init(Sex: Sex = .male,
-              kilogram Weight: Kilograms = 72,
+  public init(sex: Sex = .male,
+              kilogram weight: Kilograms = 72,
               BAC: BAC = 0.0,
-              MetabolicRate: MetabolicRate = .standard,
-              Drinks: [Drink?] = []){
-    self.Sex = Sex
-    self.Weight = Pounds(Weight * 2.20462)
+              metabolicRate: MetabolicRate = .standard,
+              drinks: [Drink] = []){
+    self.sex = sex
+    self.weight = Pounds(weight * 2.20462)
     self.BAC = BAC
-    self.Drinks = Drinks
-    self.MetabolicRate = MetabolicRate
+    self.drinks = drinks
+    self.metabolicRate = metabolicRate
   }
 }

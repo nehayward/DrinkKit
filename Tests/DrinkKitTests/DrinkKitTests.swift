@@ -13,73 +13,65 @@ import DrinkKit
 class DrinkKitTests: XCTestCase {
   func testGetBACFemale() {
     let thirtyMinsAgo = Calendar.current.date(byAdding: .minute, value: -30, to: Date())!
-    let drinks : [Drink] = [Drink(Alcohol: .wine)]
+    let drinks = [Drink(alcohol: .wine)]
     
-    let Janice = User(Sex: .female, Weight: 120, Feet: 5, Inches: 2)
-    let BAC = BloodAlcoholContent(user: Janice)
+    let janice = User(sex: .female, weight: 120, feet: 5, inches: 2)
+    let BAC = BloodAlcoholContent(user: janice)
     
-    XCTAssertEqual(BAC.Get(with: drinks, started: thirtyMinsAgo), 0.029, "Female BAC Wrong")
+    XCTAssertEqual(BAC.get(with: drinks, started: thirtyMinsAgo), 0.029, "Female BAC Wrong")
   }
   
   
   func testGetBACMale() {
     let twoHoursAgo = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
+    let alcohol: [Alcohol] = [.spirit, .beer, .wine]
+
+    let john = User(drinks: alcohol.map { Drink(alcohol: $0) })
+    let BAC = BloodAlcoholContent(user: john)
     
-    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
-    
-    let John = User(Drinks: Drinks)
-    let BAC = BloodAlcoholContent(user: John)
-    
-    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAgo), 0.045, "Male BAC Wrong")
+    XCTAssertEqual(BAC.get(with: john.drinks, started: twoHoursAgo), 0.045, "Male BAC Wrong")
   }
   
   func testBACPercentage() {
     let twoHoursAgo = Calendar.current.date(byAdding: .hour, value: -2, to: Date())!
+
+    let alcohol: [Alcohol] = [.spirit, .beer, .wine]
+
+    let john = User(drinks: alcohol.map { Drink(alcohol: $0) })
+    let BAC = BloodAlcoholContent(user: john)
     
-    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
-    
-    let John = User(Drinks: Drinks)
-    let BAC = BloodAlcoholContent(user: John)
-    
-    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAgo).percantage, "0.045%", "Male BAC Wrong")
+    XCTAssertEqual(BAC.get(with: john.drinks,
+                           started: twoHoursAgo).percentage, "0.045%", "Male BAC Wrong")
   }
   
   func testTimeSober() {
-    let John = User(Sex: .male)
+    let John = User(sex: .male)
     let BAC = BloodAlcoholContent(user: John)
     
-    XCTAssertNotEqual(BAC.Time(when: .Sober, current: 0.08), Date(), "Wrong Time")
+    XCTAssertNotEqual(BAC.time(when: .sober, current: 0.08), Date(), "Wrong Time")
   }
   
   func testTimeSoberUntilLegalLimit() {
-    let John = User(Sex: .male)
+    let John = User(sex: .male)
     let BAC = BloodAlcoholContent(user: John)
     
-    XCTAssertLessThan(BAC.Time(when: .USLegalLimit, current: 0.08), Date(), "Wrong Time")
+    XCTAssertLessThan(BAC.time(when: .legalLimitUS, current: 0.08), Date(), "Wrong Time")
   }
   
   func testFutureTime() {
     let twoHoursAhead = Calendar.current.date(byAdding: .hour, value: 2, to: Date())!
+    let alcohol: [Alcohol] = [.spirit, .beer, .wine]
 
-    let Drinks : [Drink] = [Drink(Alcohol: .spirit), Drink(Alcohol: .beer), Drink(Alcohol: .wine)]
-    let John = User(Drinks: Drinks)
-    let BAC = BloodAlcoholContent(user: John)
+    let john = User(drinks: alcohol.map { Drink(alcohol: $0) })
+    let BAC = BloodAlcoholContent(user: john)
     
-    XCTAssertEqual(BAC.Get(with: Drinks, started: twoHoursAhead), 0.0, "Wrong BAC")
+    XCTAssertEqual(BAC.get(with: john.drinks, started: twoHoursAhead), 0.0, "Wrong BAC")
   }
   
   func testImperialUser() {
     let weight = 72.5748
-    let John = User(Sex: .male, kilogram: weight)
+    let john = User(sex: .male, kilogram: weight)
     
-    XCTAssertLessThanOrEqual(John.Weight, User.Pounds(weight * 2.20462), "Wrong Time")
+    XCTAssertLessThanOrEqual(john.weight, User.Pounds(weight * 2.20462), "Wrong Time")
   }
-  
-  func testPerformanceExample() {
-    // This is an example of a performance test case.
-    self.measure {
-      // Put the code you want to measure the time of here.
-    }
-  }
-  
 }
