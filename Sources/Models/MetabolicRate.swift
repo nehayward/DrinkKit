@@ -6,8 +6,7 @@
 //  Copyright © 2018 Nick Hayward. All rights reserved.
 //
 
-
-public enum MetabolicRate : Double {
+public enum MetabolicRate: Double {
   case light = 0.010
   case standard = 0.017
   case medium = 0.020

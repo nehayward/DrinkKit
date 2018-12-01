@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Level : Double {
-  case Sober = 0.0
-  case USLegalLimit = 0.08
+public enum Level: Double {
+  case sober = 0.0
+  case legalLimitUS = 0.08
 }

@@ -11,5 +11,5 @@ import Foundation
 public typealias BAC = Double
 
 extension BAC {
-  public var percantage: String { return "\(self)%"}
+  public var percentage: String { return "\(self)%"}
 }

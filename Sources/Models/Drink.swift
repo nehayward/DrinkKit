@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Kind : String {
+public enum Kind: String {
   case beer
   case wine
   case distilled
@@ -17,49 +17,55 @@ public enum Kind : String {
 public struct Drink {
   public typealias Ounce = Double
   
-  public let Volume: Ounce
+  public let volume: Ounce
   public let ABV: Double
-  public let Time : Date
-  public let Alcohol: Alcohol
-  public let Style: String
+  public let time : Date
+  public let alcohol: Alcohol
+  public let style: String
   
-  var Ethanol : Double {
-    return Volume * ABV
+  var ethanol: Double {
+    return volume * ABV
   }
   
-  public init(Volume: Ounce = 12, ABV: Double = 0.050, Time: Date = Date(), Alcohol: Alcohol = .beer, Style: String = "") {
-    self.Volume = Volume
+  public init(volume: Ounce = 12,
+              ABV: Double = 0.050,
+              time: Date = Date(),
+              alcohol: Alcohol = .beer,
+              style: String = "") {
+    self.volume = volume
     self.ABV = ABV
-    self.Time = Time
-    self.Alcohol = Alcohol
-    self.Style = Style
+    self.time = time
+    self.alcohol = alcohol
+    self.style = style
   }
 }
 
 extension Drink {
-  public init(Alcohol: Alcohol, Time : Date = Date(), Style: String = "") {
-    self.Time = Time
-    self.Style = Style
+  public init(alcohol: Alcohol,
+              time: Date = Date(),
+              style: String = "") {
+    self.time = time
+    self.style = style
     
-    switch Alcohol {
+    switch alcohol {
     case .wine:
-      self.Volume = 5
+      self.volume = 5
       self.ABV = 0.12
-      self.Alcohol = Alcohol
+      self.alcohol = alcohol
     case .spirit:
-      self.Volume = 1.5
+      self.volume = 1.5
       self.ABV = 0.40
-      self.Alcohol = Alcohol
+      self.alcohol = alcohol
     case .beer:
-      self.Volume = 12
+      self.volume = 12
       self.ABV = 0.050
-      self.Alcohol = Alcohol
+      self.alcohol = alcohol
     }
   }
 }
 
 extension Drink : CustomStringConvertible {
   public var description: String {
-    return "\(Alcohol)" + (Style == "" ? "" : " (\(Style))") + " \(Volume)oz \(ABV * 100)% ABV at \(Time)"
+    return "\(alcohol)" + (style == "" ? "" : " (\(style))") + " \(volume)oz \(ABV * 100)% ABV at \(time)"
   }
 }
